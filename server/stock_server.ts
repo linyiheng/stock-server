@@ -30,7 +30,8 @@ app.get('/api/stock', (req,res)=>{
     }
     res.json(result);
 });
-app.get('/api/stock:id', (req,res)=>{
+app.get('/api/stock/:id', (req,res)=>{
+    console.log(req.params.id);
     res.json(stocks.find(stock=>stock.id==req.params.id));
 });
 

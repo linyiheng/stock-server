@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var express = require("express");
 var Stock = /** @class */ (function () {
     function Stock(id, name, price, rating, desc, categories) {
@@ -32,11 +32,9 @@ app.get('/api/stock', function (req, res) {
     }
     res.json(result);
 });
-app.get('/api/stock/:id', function (req, res) {
-    console.log(req.params.id);
+app.get('/api/stock:id?', function (req, res) {
     res.json(stocks.find(function (stock) { return stock.id == req.params.id; }));
 });
 var server = app.listen(8000, 'localhost', function () {
     console.log('服务器已启动,地址是http://localhost:8000');
 });
-//# sourceMappingURL=stock_server.js.map
